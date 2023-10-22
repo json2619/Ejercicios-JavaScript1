@@ -1,0 +1,8 @@
+"use strict";
+
+const word = document.getElementById('word');
+const button = document.getElementById('get-button');
+
+button.addEventListener("click", function (word) {
+    manyWords(word);
+});
