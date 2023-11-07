@@ -289,4 +289,63 @@ let obj1 = {
 console.log(process(obj));
 console.log(process(obj));
 
+const sym1 = Symbol();
+const sym2 = Symbol("Texto 1");
+const sym3 = Symbol("Texto 2");
 
+console.log(sym1.toString());
+console.log(sym2.description);
+console.log(typeof sym2);
+console.log(sym1 === sym2);
+
+let computer = computers[0];
+console.log(computer);
+
+const id = Symbol("codSerie");
+computer[id] = 123456;
+
+console.log(computer);
+
+for (const p in computer) {
+    console.log(computer[p]);
+}
+
+console.log(computers);
+
+const library1 = Symbol('lib1.id');
+const library2 = Symbol('lib2.id');
+
+function lib1tag(obj, id) {
+    obj[library1] = id;
+}
+
+function lib2tag(obj, id) {
+    obj[library2] = id;
+}
+
+const c1 = {
+    brand: 'hp',
+    model: 'EliteBook',
+    memory: 16
+}
+
+lib1tag(c1, "1234");
+lib2tag(c1, "1234");
+
+console.log(c1);
+
+function test1() {
+    let s = Symbol.for('lib1.id');
+
+    c1[s] = "zzzzz";
+}
+
+test1();
+
+function test2() {
+    return c1[Symbol.for('lib1.id')];
+}
+
+console.log(test2());
+
+console.log(c1);
