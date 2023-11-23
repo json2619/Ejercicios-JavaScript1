@@ -125,7 +125,7 @@ console.log(ids3);
 
 console.log("----------------");
 
-let ids4 = computers.filter(function (elem, index) {
+let ids4 = computers.filter(function (elem) {
     return (elem.memory <= 16) ? true : false;
 })
 
